@@ -48,6 +48,23 @@
 -- @IO:GS $FFD7113 RTC:RTCDAY Real-time Clock day of month value (binary coded decimal)
 -- @IO:GS $FFD7114 RTC:RTCMONTH Real-time Clock month value (binary coded decimal)
 -- @IO:GS $FFD7115 RTC:RTCYEAR Real-time Clock year value (binary coded decimal)
+-- @IO:GS $FFD7116 RTC:RTCDAYOFWEEK Real-time Clock day of the week value 0 to 6 (binary coded decimal)
+-- @IO:GS $FFD7117.0 RTC:RTCF RTC failure flag: If 1, then power has been lost, and clock needs to be set again. Setting clock automatically clears this bit.
+-- @IO:GS $FFD7117.1 RTC:RTCLBAT75 Low Battery Indicator 75% Bit. In Normal Mode (VDD), this bit indicates when the battery level has dropped below the preselected 75Tp trip levels. In Battery Mode (VBAT), this bit indicates the device has entered into battery mode by polling once every 10 minutes.
+-- @IO:GS $FFD7117.2 RTC:RTCLBAT85 Low Battery Indicator 85% Bit. In Normal Mode (VDD), this bit indicates when the battery level has dropped below the preselected 85Tp trip levels. In Battery Mode (VBAT), this bit indicates the device has entered into battery mode by polling once every 10 minutes.
+-- @IO:GS $FFD7117.3 RTC:RTCLVDD Low Vdd Indicator Bit. Indicates when VDD has dropped below the pre-selected trip level (Brownout Mode). The trip points are selected by three bits: VDDTrip2, VDDTrip1 and VDDTrip0 in PWR_VDD registers. Detection is only enabled in VDD mode.
+-- @IO:GS $FFD7117.4 RTC:RTCLALM Alarm Bit.Can be manually reset to “0” or automatically reset by enabling the auto-reset bit. A write to this bit in the SR can only set it to “0”, not “1”. An alarm bit that is set by an alarm occurring during an SR read operation will remain set after the read operation is complete.
+-- @IO:GS $FFD7117.5 RTC:RTCDSTADJ Daylight Saving Time Adjusted Bit. Indicates whether daylight saving time forward adjustment has happened.
+-- @IO:GS $FFD7117.6 RTC:RTCOSCF Oscillator Fail Bit.The oscillator frequency is either zero or very far from the desired 32.768kHz due to failure, PC board contamination or mechanical issues.
+-- @IO:GS $FFD7117.7 RTC:RTCBUSY Busy Bit. Temperature sensing is in progress. In this mode, Alpha, Beta and ITRO registers are disabled and cannot be accessed.
+-- @IO:GS $FFD7118.0 RTC:RTCFO0 Frequency Out Control Bit 0. These bits enable/disable the frequency output function and select the output frequency at the IRQ/FOUT pin.
+-- @IO:GS $FFD7118.1 RTC:RTCFO1 Frequency Out Control Bit 1. These bits enable/disable the frequency output function and select the output frequency at the IRQ/FOUT pin.
+-- @IO:GS $FFD7118.2 RTC:RTCFO2 Frequency Out Control Bit 2. These bits enable/disable the frequency output function and select the output frequency at the IRQ/FOUT pin.
+-- @IO:GS $FFD7118.3 RTC:RTCFO3 Frequency Out Control Bit 3. These bits enable/disable the frequency output function and select the output frequency at the IRQ/FOUT pin.
+-- @IO:GS $FFD7118.4 RTC:RTCFOBATB Frequency Output and Interrupt Bit. Enables/disables the IRQ/FOUT pin during battery-backup mode.
+-- @IO:GS $FFD7118.5 RTC:RTCIM Interrupt/Alarm Mode Bit. Enables/disables the interrupt mode of the alarm function.
+-- @IO:GS $FFD7118.6 RTC:RTCWRTC Write RTC Enable Bit. Enables/disables write capability into the RTC Timing Registers. The factory default setting of this bit is “0”.
+-- @IO:GS $FFD7118.7 RTC:RTCARST Automatic Reset Bit. Enables/disables the automatic reset of the ALM, LVDD, LBAT85 and LBAT75 status bits only.
 
 
 -- @IO:GS $FFD7140-7F RTC:NVRAM 64-bytes of non-volatile RAM. Can be used for storing machine configuration.
